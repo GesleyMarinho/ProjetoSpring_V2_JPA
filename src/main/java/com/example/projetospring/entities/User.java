@@ -11,7 +11,7 @@ import java.util.Objects;
 public class User implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,19 +26,19 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(long id, String nome, String email, String phone, String senha) {
-        this.id = id;
+    public User(String nome, String email, String phone, String senha) {
+
         this.nome = nome;
         this.email = email;
         this.phone = phone;
         this.senha = senha;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
