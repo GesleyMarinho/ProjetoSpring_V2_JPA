@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping(value = "/users")
@@ -21,7 +21,6 @@ public class UserResource {
 
     @GetMapping
     public ResponseEntity<List<User>> findAll() {
-        //User user = new User("Gesley", "g@g.com", "3136245302", "123456");
         List<User> list = userService.findAll();
 
         return ResponseEntity.ok().body(list);
