@@ -1,6 +1,6 @@
 package com.example.projetospring.entities;
 
-import com.example.projetospring.entities.pk.OrderItemPk;
+import com.example.projetospring.entities.pk.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -14,7 +14,7 @@ public class OrderItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @EmbeddedId
-    private OrderItemPk id;
+    private OrderItemPK id;
     private Integer quantity;
     private Double price;
 

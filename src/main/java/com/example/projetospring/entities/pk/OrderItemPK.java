@@ -9,17 +9,17 @@ import jakarta.persistence.ManyToOne;
 import java.io.Serializable;
 import java.util.Objects;
 
- @Embeddable  //Anotacions classe auxiliar de chave primaria composta;
-public class OrderItemPk implements Serializable {
+@Embeddable  //Anotacions classe auxiliar de chave primaria composta;
+public class OrderItemPK implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @ManyToOne
-    @JoinColumn(name ="tb_order_ID")
+    @JoinColumn(name ="order_ID")
     private Order order;
 
      @ManyToOne
-     @JoinColumn(name ="tb_product_ID")
+     @JoinColumn(name ="product_ID")
     private Product product;
 
     public Order getOrder() {
@@ -41,7 +41,7 @@ public class OrderItemPk implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        OrderItemPk that = (OrderItemPk) o;
+        OrderItemPK that = (OrderItemPK) o;
         return Objects.equals(order, that.order) && Objects.equals(product, that.product);
     }
 
