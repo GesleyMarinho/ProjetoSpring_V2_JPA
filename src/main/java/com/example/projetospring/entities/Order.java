@@ -31,6 +31,7 @@ public class Order implements Serializable {
     @JsonIgnore
     private User client;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "id.order")
     private Set<OrderItem> orderItems = new HashSet<>();
 
