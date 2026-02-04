@@ -1,8 +1,8 @@
-package com.example.projetospring.services;
+package com.example.projetospring.services_funcoes;
 
 import com.example.projetospring.entities.Category;
 import com.example.projetospring.exceptions.ResourceNotFoundException;
-import com.example.projetospring.repositories.CategoryRepository;
+import com.example.projetospring.repositories_acesso_banco.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

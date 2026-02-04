@@ -1,7 +1,7 @@
-package com.example.projetospring.resources;
+package com.example.projetospring.resources_controller;
 
 import com.example.projetospring.entities.Product;
-import com.example.projetospring.services.ProductService;
+import com.example.projetospring.services_funcoes.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

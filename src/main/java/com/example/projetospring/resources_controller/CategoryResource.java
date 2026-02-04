@@ -1,7 +1,7 @@
-package com.example.projetospring.resources;
+package com.example.projetospring.resources_controller;
 
 import com.example.projetospring.entities.Category;
-import com.example.projetospring.services.CategoryService;
+import com.example.projetospring.services_funcoes.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
