@@ -23,22 +23,6 @@ public class ProductService {
                 .orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
-    /*@GetMapping
-    public Product findById(Long id) {
-        Optional<Product> Product = ProductRepository.findById(id);
-
-        //sugestão da Ide se tem o valor retorna se não coloca null
-        return Product.orElse(null);
-
-        // aqui só retorna se existir mesmo o valor, caso contrario var gerar um exceção.
-        //return Product.get();
-    }*/
-
-   /* @GetMapping(value = "/{id}")
-    public ResponseEntity<Product> findbyId(@PathVariable Long id){
-        Product Product = ProductRepository.findById(id).get();
-        return ResponseEntity.ok().body(Product);
-    }*/
 }
 
 

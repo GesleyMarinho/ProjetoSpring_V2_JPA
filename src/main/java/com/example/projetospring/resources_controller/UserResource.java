@@ -26,17 +26,6 @@ public class UserResource {
         return ResponseEntity.ok().body(list);
     }
 
-   /* @GetMapping
-    public User findById(Long id) {
-        Optional<User> user = Optional.ofNullable(userService.findById(id));
-
-        //sugestão da Ide se tem o valor retorna se não coloca null
-        //return user.orElse(null);
-
-        // aqui só retorna se existir mesmo o valor, caso contrario var gerar um exceção.
-        return user.get();
-    }*/
-
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> findbyId(@PathVariable Long id){
         User user = userService.findById(id);

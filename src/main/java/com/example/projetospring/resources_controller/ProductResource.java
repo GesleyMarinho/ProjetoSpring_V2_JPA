@@ -26,17 +26,6 @@ public class ProductResource {
         return ResponseEntity.ok().body(list);
     }
 
-   /* @GetMapping
-    public Product findById(Long id) {
-        Optional<Product> Product = Optional.ofNullable(ProductService.findById(id));
-
-        //sugestão da Ide se tem o valor retorna se não coloca null
-        //return Product.orElse(null);
-
-        // aqui só retorna se existir mesmo o valor, caso contrario var gerar um exceção.
-        return Product.get();
-    }*/
-
     @GetMapping(value = "/{id}")
     public ResponseEntity<Product> findbyId(@PathVariable Long id){
         Product Product = ProductService.findById(id);

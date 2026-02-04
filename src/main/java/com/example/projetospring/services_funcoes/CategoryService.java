@@ -23,22 +23,6 @@ public class CategoryService {
                 .orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
-    /*@GetMapping
-    public Category findById(Long id) {
-        Optional<Category> Category = CategoryRepository.findById(id);
-
-        //sugestão da Ide se tem o valor retorna se não coloca null
-        return Category.orElse(null);
-
-        // aqui só retorna se existir mesmo o valor, caso contrario var gerar um exceção.
-        //return Category.get();
-    }*/
-
-   /* @GetMapping(value = "/{id}")
-    public ResponseEntity<Category> findbyId(@PathVariable Long id){
-        Category Category = CategoryRepository.findById(id).get();
-        return ResponseEntity.ok().body(Category);
-    }*/
 }
 
 

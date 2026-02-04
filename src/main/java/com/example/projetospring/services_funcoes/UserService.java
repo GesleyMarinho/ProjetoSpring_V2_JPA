@@ -26,23 +26,6 @@ public class UserService {
         return userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(id));
     }
-
-    /*@GetMapping
-    public User findById(Long id) {
-        Optional<User> user = userRepository.findById(id);
-
-        //sugestão da Ide se tem o valor retorna se não coloca null
-        return user.orElse(null);
-
-        // aqui só retorna se existir mesmo o valor, caso contrario var gerar um exceção.
-        //return user.get();
-    }*/
-
-   /* @GetMapping(value = "/{id}")
-    public ResponseEntity<User> findbyId(@PathVariable Long id){
-        User user = userRepository.findById(id).get();
-        return ResponseEntity.ok().body(user);
-    }*/
 }
 
 
