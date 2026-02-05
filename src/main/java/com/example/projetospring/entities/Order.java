@@ -21,19 +21,20 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
 
     private Integer orderStatus;
 
     @ManyToOne
     @JoinColumn(name = "clientID")
-    @JsonIgnore
+    //@JsonIgnore
     private User client;
 
-    @JsonIgnore
+    //@JsonIgnore
     @OneToMany(mappedBy = "id.order")
     private Set<OrderItem> orderItems = new HashSet<>();
+
 
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
@@ -44,8 +45,8 @@ public class Order implements Serializable {
     public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
         this.id = id;
         this.moment = moment;
-        setOrderStatus(orderStatus);
         this.client = client;
+        setOrderStatus(orderStatus);
     }
 
     public Payment getPayments() {
@@ -94,6 +95,16 @@ public class Order implements Serializable {
     public Set<OrderItem> getOrderItems() {
         return orderItems;
     }
+
+
+    public  double getTotal() {
+        double total = 0;
+        for (OrderItem orderItem : orderItems) {
+            total += orderItem.getSubTotal();
+        }
+        return total;
+    }
+
 
     @Override
     public boolean equals(Object o) {

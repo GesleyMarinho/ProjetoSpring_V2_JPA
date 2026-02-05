@@ -21,6 +21,7 @@ public class Payment implements Serializable {
 
     @OneToOne
     @MapsId
+    @JsonIgnore
     private Order order;
 
 
@@ -49,7 +50,6 @@ public class Payment implements Serializable {
         this.moment = moment;
     }
 
-    @JsonIgnore
     public Order getOrder() {
         return order;
     }

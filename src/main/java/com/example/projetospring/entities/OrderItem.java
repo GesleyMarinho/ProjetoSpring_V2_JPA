@@ -1,6 +1,7 @@
 package com.example.projetospring.entities;
 
 import com.example.projetospring.entities.pk.OrderItemPK;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -20,6 +21,7 @@ public class OrderItem implements Serializable {
     private Integer quantity;
     private Double price;
 
+
     public OrderItem() {
     }
 
@@ -30,6 +32,7 @@ public class OrderItem implements Serializable {
         this.price = price;
     }
 
+    @JsonIgnore
     public Order getOrder() {
         return id.getOrder();
     }
@@ -44,6 +47,13 @@ public class OrderItem implements Serializable {
 
     public Double getPrice() {
         return price;
+    }
+
+    public double getSubTotal() {
+        return price * quantity;
+    }
+
+    public void setOrder(Order order) {
     }
 
     @Override
