@@ -22,6 +22,10 @@ public class UserService {
         return userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(id));
     }
+
+    public User save(User user) {
+        return userRepository.save(user);
+    }
 }
 
 
