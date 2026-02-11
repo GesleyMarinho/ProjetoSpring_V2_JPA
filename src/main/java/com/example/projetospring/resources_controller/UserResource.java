@@ -32,10 +32,27 @@ public class UserResource {
     }
 
     //Ajustar no construtor a criação do usuário.
+    //inserção de usuário
     @PostMapping
     public ResponseEntity<User> save(@RequestBody User user) {
         User u = userService.save(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(u.getId()).toUri();
         return ResponseEntity.created(uri).body(u);
+    }
+
+    //deletar o usuário de usuário
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        userService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    //Atualização de usuário
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user) {
+
+        user = userService.update(id, user);
+        return ResponseEntity.ok().body(user);
+
     }
 }
