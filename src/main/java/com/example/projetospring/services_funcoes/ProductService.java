@@ -1,7 +1,7 @@
 package com.example.projetospring.services_funcoes;
 
 import com.example.projetospring.entities.Product;
-import com.example.projetospring.exceptions.ResourceNotFoundException;
+import com.example.projetospring.services_funcoes.exceptions.ResourceNotFoundException;
 import com.example.projetospring.repositories_acesso_banco.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
