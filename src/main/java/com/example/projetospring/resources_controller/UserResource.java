@@ -31,8 +31,6 @@ public class UserResource {
         return ResponseEntity.ok().body(user);
     }
 
-    //Ajustar no construtor a criação do usuário.
-    //inserção de usuário
     @PostMapping
     public ResponseEntity<User> save(@RequestBody User user) {
         User u = userService.save(user);
