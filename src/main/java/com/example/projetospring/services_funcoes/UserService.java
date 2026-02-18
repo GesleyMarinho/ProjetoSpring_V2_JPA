@@ -52,15 +52,6 @@ public class UserService {
         return userRepository.save(entity);
     }
 
-
-    /*public User update(Long id, User user) {
-
-            User entity = userRepository.getReferenceById(id);
-            updateData(entity, user);
-            return userRepository.save(entity);
-
-    }*/
-
     private void updateData(User entity, User user) {
         entity.setname(user.getname());
         entity.setEmail(user.getEmail());
